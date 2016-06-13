@@ -1,0 +1,27 @@
+{
+  "name": "oauthserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvtuong/PasswordCredential.git"
+  },
+  "author": "nvtuong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nvtuong/PasswordCredential/issues"
+  },
+  "homepage": "https://github.com/nvtuong/PasswordCredential#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.20",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "puid": "^1.0.5"
+  }
+}
