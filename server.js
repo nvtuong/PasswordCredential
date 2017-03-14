@@ -10,19 +10,16 @@ var userController = require('./controllers/user.js');
 
 var app = express();
 var port = 9000;
-
+var router = require('./routes');
 app.use(passport.initialize());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-var router = express.Router();
 
-router.route('/app/create').post(clientController.create);
 
-router.route('/user/infor').post(userController.getUserInfor);
-
-router.route('/user/create').post(userController.create);
-
-router.route('/oauth/token').post(authController.isAuthenticated, oauthController.token);
+// router.route('/app/create').post(clientController.create);
+// router.route('/user/infor').post(userController.getUserInfor);
+// router.route('/user/create').post(userController.create);
+// router.route('/oauth/token').post(authController.isAuthenticated, oauthController.token);
 
 router.route('/').get(function(req, res){
 	console.log("home");
@@ -30,10 +27,12 @@ router.route('/').get(function(req, res){
 });
 
 app.use("/api", router);
+db.connectToMongoDB(urlDB);
+
 
 app.listen(9000, function() {
 	console.log('Server is runnning at 9000');
-	db.connectToMongoDB(urlDB);
+	
 });
 
 
